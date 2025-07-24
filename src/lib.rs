@@ -5,7 +5,7 @@ pub mod image;
 
 use std::ptr;
 use raylib::prelude::*;
-use imgui::{BackendFlags, ConfigFlags, DrawCmd, DrawIdx, DrawVert, Key, MouseCursor, TextureId, Ui};
+use imgui::{BackendFlags, ConfigFlags, DrawCmd, DrawIdx, DrawVert, Key, MouseCursor, TextureId};
 use imgui::internal::{RawCast, RawWrapper};
 use crate::clipboard::ClipboardBackend;
 use crate::frame_state::FrameState;
