@@ -1,10 +1,11 @@
 mod frame_state;
 mod maps;
 mod clipboard;
+pub mod image;
 
 use std::ptr;
 use raylib::prelude::*;
-use imgui::{BackendFlags, ConfigFlags, DrawCmd, DrawIdx, DrawVert, Key, MouseCursor, TextureId};
+use imgui::{BackendFlags, ConfigFlags, DrawCmd, DrawIdx, DrawVert, Key, MouseCursor, TextureId, Ui};
 use imgui::internal::{RawCast, RawWrapper};
 use crate::clipboard::ClipboardBackend;
 use crate::frame_state::FrameState;
@@ -324,18 +325,5 @@ impl Renderer {
 
 			font_texture
 		}
-	}
-}
-
-pub trait TextureExt {
-	fn imgui_image(&self) -> imgui::Image;
-}
-
-impl TextureExt for Texture2D {
-	fn imgui_image(&self) -> imgui::Image {
-		imgui::Image::new(
-			TextureId::new(self.id as _),
-			[self.width() as _, self.height() as _],
-		)
 	}
 }
